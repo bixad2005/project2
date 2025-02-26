@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './spinner.css'
+import './spinner.css';
 
 const Spinner = () => {
-    return(
+    return (
         <div className="lds-css">
             <div className="lds-double-ring">
                 <div></div>
