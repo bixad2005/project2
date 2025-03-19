@@ -5,7 +5,7 @@ import ItemDetails, {Record} from '../item-details/item-details'
 
 import SwapiService from "../../services/swapi-service"
 import './people-page.css'
-import Row from "../Row"
+import Row from "../row"
 import ErrorBoundary from "../error-boundary"
 
 export default class PeoplePage extends Component {
