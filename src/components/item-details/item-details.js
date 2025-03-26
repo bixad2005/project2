@@ -33,7 +33,9 @@ export default class ItemDetails extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(this.props.itemId !== prevProps.item.id){
+        if(this.props.itemId !== prevProps.item.id ||
+            this.props.getData !== prevProps.getData ||
+            this.props.getImageUrl !== prevProps.getImageUrl){
             this.updateItem()
             this.setState({loading: true})
         }
@@ -41,9 +43,8 @@ export default class ItemDetails extends Component {
 
     updateItem = () => {
         const {itemId, getData, getImageUrl} = this.props
-        console.log(getData)
         if(!itemId){
-            return;
+            return
         }
 
         getData(itemId)
