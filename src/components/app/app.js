@@ -10,7 +10,7 @@ import {PersonDetails, PersonList, PlanetList, StarshipList} from "../sw-compone
 import DummySwapiService from "../../services/dummy-swapi-service";
 
 import {SwapiServiceProvider} from '../swapi-service-context';
-import SwapiService from "../../services/swapi-service;"
+import SwapiService from "../../services/swapi-service"
 
 export default class App extends Component{
 
