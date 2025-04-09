@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 
 import './item-details.css'
-import SwapView from '../../services/swapi-service';
 import Spinner from '../spinner';
 import SwapiService from "../../services/swapi-service";
 
@@ -33,7 +32,7 @@ export default class ItemDetails extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(this.props.itemId !== prevProps.item.id ||
+        if(this.props.itemId !== prevProps.itemId ||
             this.props.getData !== prevProps.getData ||
             this.props.getImageUrl !== prevProps.getImageUrl){
             this.updateItem()
