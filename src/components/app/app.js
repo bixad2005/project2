@@ -10,7 +10,7 @@ import {ErrorIndicator, NotFoundIndicator} from "../errors"
 
 import {SwapiServiceProvider} from '../swapi-service-context'
 import SwapiService from "../../services/swapi-service"
-import { PeoplePage, PlanetsPage, StarshipsPage, LoginPage, SecretPage } from "../pages"
+import { PeoplePage, PlanetsPage, StarshipsPage, LoginPage, SecretPage, WelcomePage } from "../pages"
 
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import StarshipDetails from '../sw-components/starship-details';
@@ -46,12 +46,10 @@ export default class App extends Component{
                             <Header />
                             <RandomPlanet />
                             <Switch>
-                                <Route path="/" render={() => <h4>Welcome to StarDB</h4>} exact />
+                                <Route path="/" component={WelcomePage} exact />
 
-                                <Route path="/people/:id?" component={PeoplePage} exact />
-
-                                <Route path="planets/:id?" component={PlanetsPage} exact />
-                                <Route path="/starships" component={StarshipsPage} exact />
+                                <Route path="/planet" component={PlanetsPage} exact/>
+                                <Route path="/people/:id" component={PeoplePage} exact/>
                                 <Route path="/starships/:id" render={({ match }) => {
                                     const {id} = match.params
                                     return <StarshipDetails itemId={id} />
